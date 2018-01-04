@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		
+			*{margin: 0;padding: 0;list-style: none;}
+			ul{overflow: hidden;}
+			ul li{
+				width: 100px;
+				height: 30px;
+				border: 1px solid #000000;
+				float: left;
+				text-align: center;
+				line-height: 30px;
+				cursor: pointer;
+			}
+			p{width: 300px;height: 300px;border: 1px solid #FF1493;display: none;background: #C81623;}
+			.show{display: block;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>122</li>
+				<li>111</li>
+				<li>222</li>
+			</ul>
+		</div>
+		<p class="show">aaa</p>
+		<p>bbb</p>
+		<p>ccc</p>
+		<script type="text/javascript">
+			
+			[...document.querySelectorAll("li")].find((x, y) => {
+   				 x['onclick'] = () => {
+    	    [...document.querySelectorAll("p")].find(d => {
+        	    d.style.display = "none"
+     	  	 });
+       		[...document.querySelectorAll("p")][y].style.display = "block"
+   			 }
+			})
+		</script>
+	</body>
+</html>
